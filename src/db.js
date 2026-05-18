@@ -20,7 +20,6 @@ async function ConnectToDatabase() {
   collection = db.collection(collectionName);
 
   await collection.createIndex({ name: 1 }, { unique: true });
-  await collection.createIndex({ warehouse: 1 });
 
   return collection;
 }

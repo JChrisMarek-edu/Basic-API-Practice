@@ -1,5 +1,5 @@
 const { ConnectToDatabase, CloseDatabase } = require('./db');
-const products = require('./products');
+const movies = require('./movies');
 
 async function Seed() {
   const collection = await ConnectToDatabase();

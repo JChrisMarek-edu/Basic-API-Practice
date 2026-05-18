@@ -63,7 +63,7 @@ app.get('/api/products', async (request, response) => {
   const collection = await ConnectToDatabase();
   const filter = BuildProductQuery(request.query);
   const products = await collection.find(filter).sort({ name: 1 }).toArray();
-  response.json(movies);
+  response.json(products);
 });
 
 app.get('/api/products/:id', async (request, response) => {
@@ -79,7 +79,7 @@ app.get('/api/products/:id', async (request, response) => {
     return response.status(404).json({ error: 'Movie not found.' });
   }
 
-  response.json(movies);
+  response.json(product);
 });
 
 app.post('/api/products', async (request, response) => {

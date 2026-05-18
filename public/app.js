@@ -10,9 +10,9 @@ function AddProductRow(product) {
   const row = document.createElement('tr');
   row.innerHTML = `
     <td><a href="/api/products/${product._id}">${product.name}</a></td>
-    <td>$${Number(product.price).toFixed(2)}</td>
-    <td>${product.quantity}</td>
-    <td>${product.warehouse}</td>
+    <td>${product.year}</td>
+    <td>${product.minutes}</td>
+    <td>${product.director}</td>
   `;
   tableBody.appendChild(row);
 }
@@ -22,7 +22,7 @@ async function LoadProducts() {
   const response = await fetch('/api/products');
   const products = await response.json();
   products.forEach(AddProductRow);
-  ShowMessage(`Loaded ${products.length} product(s).`);
+  ShowMessage(`Loaded ${products.length} movie(s).`);
 }
 
 form.addEventListener('submit', async (event) => {
@@ -31,9 +31,9 @@ form.addEventListener('submit', async (event) => {
   const formData = new FormData(form);
   const product = {
     name: formData.get('name'),
-    price: Number(formData.get('price')),
-    quantity: Number(formData.get('quantity')),
-    warehouse: formData.get('warehouse')
+    year: Number(formData.get('year')),
+    minutes: Number(formData.get('minutes')),
+    director: formData.get('director')
   };
 
   const response = await fetch('/api/products', {
@@ -44,7 +44,7 @@ form.addEventListener('submit', async (event) => {
 
   if (!response.ok) {
     const error = await response.json();
-    ShowMessage(error.error || 'Could not add product.');
+    ShowMessage(error.error || 'Could not add movie.');
     return;
   }
 
