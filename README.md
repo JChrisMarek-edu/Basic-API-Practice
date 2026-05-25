@@ -1,7 +1,7 @@
 1. What is the purpose of using `.env` \
     The `.env` or environment file is used to contain configurations for the project. It can help organize a project by keeping values needed by multiple files in one place. 
 
-2. How does this work: \
+2. How does this work: 
 ```javascript
 if (query.minPrice || query.maxPrice) {
     filter.price = {};
