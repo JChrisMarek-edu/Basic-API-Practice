@@ -15,7 +15,7 @@ if (query.minPrice || query.maxPrice) {
 3. What is the program `seed.js` used for?\
     The `seed.js` file is used to populate the initial values of a system. In this case the seed program inserts all the javascript objects from the `movies.js` file into the table. 
 
-4. Try all API routes using Postman\
+4. Try all API routes using Postman
 <img width="3840" height="2016" alt="Browser Movies Table" src="https://github.com/user-attachments/assets/6cb75609-29ff-4b9e-8762-ca40f3444ab9" />
 <img width="3840" height="2016" alt="API health" src="https://github.com/user-attachments/assets/f1016649-daee-4c9f-8f76-4d1a14b8cc6a" />
 <img width="3840" height="2016" alt="API Products" src="https://github.com/user-attachments/assets/5203f35c-63ac-4679-b76a-c710e9ff8813" />
